@@ -4,10 +4,15 @@ import './App.css';
 import Form from './form.js';
 
 class App extends Component {
+
+  onSubmit = (fields) => {
+    console.log("App comp got: ", fields)
+  }
+
   render() {
     return (
       <div className="App">
-      <Form />
+      <Form onSubmit={fields => this.onSubmit(fields)}/>
       </div>
     );
   }
