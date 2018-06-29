@@ -123,6 +123,9 @@
     "version-check": "node ./scripts/tasks/version-check.js"
   },
   "dependencies": {
-    "react": "^16.4.1"
+    "react": "^16.4.1",
+    "react-awesome-button": "^4.2.1",
+    "react-dom": "^16.4.1",
+    "react-tap-event-plugin": "^3.0.3"
   }
 }

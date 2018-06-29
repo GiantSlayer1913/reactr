@@ -1,26 +1,39 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { AwesomeButton } from 'react-awesome-button';
+import 'react-awesome-button/dist/styles.css';
+
 import logo from './logo.svg';
 import './App.css';
 import Form from './form.js';
 
-class App extends Component {
+// injectTapEventPlugin()
 
-  state {
+class App extends Component {
+  state = {
     fields: {}
   }
 
-  onSubmit = (fields) => {
-    this.setState({ fields })
+  onChange = (updatedValue) => {
+    this.setState({
+      fields: {
+        ...this.state.fields,
+        ...updatedValue
+      }
+    })
   }
 
   render() {
     return (
-      <div className="App">
-      <Form onSubmit={fields => this.onSubmit(fields)}/>
-        <p>{JSON.stringify(this.state.fields, null, 2)}</p>
-      </div>
-    );
+      // <MultiThemeProvider>
+        <div className="App">
+          <Form onChange={fields => this.onChange(fields)}/>
+            <p>{JSON.stringify(this.state.fields, null, 2)}
+            </p>
+        </div>
+      // </MultiThemeProvider>
+
+      );
+    }
   }
-}
 
 export default App;
