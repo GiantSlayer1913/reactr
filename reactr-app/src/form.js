@@ -33,6 +33,16 @@ class Form extends React.Component {
         passwordError: ""
       }
 
+      if (this.state.firstName.length === 0) {
+        isError = true;
+        errors.firstNameError = "Please enter your first name"
+      }
+
+      if (this.state.lastName.length === 0) {
+        isError = true;
+        errors.lastNameError = "Please enter your last name"
+      }
+
       if (this.state.username.length < 6) {
         isError = true;
         errors.userNameError = "Username needs to be at least 6 charachters long"
@@ -42,6 +52,7 @@ class Form extends React.Component {
         isError = true;
         errors.emailError = "Requires valid email address"
       }
+
 
       this.setState({
         ...this.state,
@@ -81,58 +92,69 @@ class Form extends React.Component {
   render() {
     return (
       <form>
+        <label>
         <input
           name="firstName"
-          hintText="First Name"
-          floatingLabelText="First Name"
+          placeholder="First Name"
+          // hintText="First Name"
+          // floatingLabelText="First Name"
           value={this.state.firstName}
           onChange={event => this.change(event)}
           errorText={this.state.firstNameError}
-          floatingLabelFixed
+          // floatingLabelFixed
           />
           <br />
+
         <input
           name="lastName"
-          hintText="Last Name"
-          floatingLabelText="Last Name"
+          placeholder="Last Name"
+          // hintText="Last Name"
+          // floatingLabelText="Last Name"
           value={this.state.lastName}
           onChange={event => this.change(event)}
           errorText={this.state.lastNameError}
-          floatingLabelFixed
+          // floatingLabelFixed
         />
         <br />
+
         <input
           name="username"
-          hintText="Username"
-          floatingLabelText="Username"
+          placeholder="Username"
+          // hintText="Username"
+          // floatingLabelText="Username"
           value={this.state.username}
           onChange={event => this.change(event)}
           errorText={this.state.userNameError}
-          floatingLabelFixed
+          // floatingLabelFixed
         />
         <br />
+
         <input
           name="email"
-          hintText="Email"
-          floatingLabelText="Email"
+          placeholder="Email"
+          // hintText="Email"
+          // floatingLabelText="Email"
           value={this.state.email}
           onChange={event => this.change(event)}
           errorText={this.state.emailError}
-          floatingLabelFixed
+          // floatingLabelFixed
         />
         <br />
+
         <input
           name="password"
-          hintText="Password"
-          floatingLabelText="Password"
+          placeholder="Password"
+          // hintText="Password"
+          // floatingLabelText="Password"
           value={this.state.password}
           onChange={event => this.change(event)}
           errorText={this.state.passwordError}
           type="password"
-          floatingLabelFixed
+          // floatingLabelFixed
         />
+        </label>
         <br />
-      <button label="Submit" onClick={event => this.onSubmit(event)} type="primary" />
+      <button label="Submit" onClick={event => this.onSubmit(event)} type="primary">Submit</button>
     </form>
     )
   }
