@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { AwesomeButton } from 'react-awesome-button';
-import 'react-awesome-button/dist/styles.css';
-
-import logo from './logo.svg';
+// import { AwesomeButton } from 'react-awesome-button';
+// import 'react-awesome-button/dist/styles.css';
+// import logo from './logo.svg';
 import './App.css';
 import Form from './form.js';
 
@@ -22,10 +21,15 @@ class App extends Component {
     })
   }
 
+
   render() {
+
+    const title = "Welcome to Reactr App";
+
     return (
       // <MultiThemeProvider>
         <div className="App">
+          <h1>{title}</h1>
           <Form onChange={fields => this.onChange(fields)}/>
             <p>{JSON.stringify(this.state.fields, null, 2)}
             </p>
